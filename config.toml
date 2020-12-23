@@ -1,6 +1,6 @@
 # Page settings
 
-baseURL = "https://berrij.github.io/"
+baseURL = "https://berrij.github.io/cv/"
 languageCode = "en-us"
 title = "Jonathan Berrisch CV"
 theme = "hugo-orbit-theme"
