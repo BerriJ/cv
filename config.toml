@@ -4,6 +4,7 @@ baseURL = "https://berrisch.biz/cv"
 languageCode = "en-us"
 title = "Jonathan Berrisch CV"
 theme = "hugo-orbit-theme"
+publishDir = "docs"
 googleAnalytics = "UA-XXXXXXX-Y"
 
 # Do not build files for websites. Need them? Set to false
