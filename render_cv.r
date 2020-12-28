@@ -16,6 +16,6 @@ rmarkdown::render("cv.rmd",
 # Convert to PDF using Pagedown
 pagedown::chrome_print(
     input = tmp_html_cv_loc,
-    output = "cv.pdf",
+    output = "berrisch_cv.pdf",
     extra_args = "--no-sandbox"
 )
