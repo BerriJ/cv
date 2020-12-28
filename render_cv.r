@@ -3,7 +3,7 @@
 # Knit the HTML version
 rmarkdown::render("cv.rmd",
     params = list(pdf_mode = FALSE),
-    output_file = "cv.html"
+    output_file = "index.html"
 )
 
 # Knit the PDF version to temporary html location

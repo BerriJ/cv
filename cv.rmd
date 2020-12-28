@@ -54,7 +54,7 @@ build_network_logo(CV$entries_data)
 
 ```{r}
 if (params$pdf_mode) {
-  cat("View this CV online with links at _berrisch.biz/cv/_")
+  cat("View this CV online with links at _berrisch.biz/cv_")
 } else {
   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/BerriJ/cv/raw/master/berrisch_cv.pdf)")
 }
