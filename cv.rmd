@@ -13,26 +13,26 @@ output:
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
-  results='asis', 
+  results = "asis",
   echo = FALSE
 )
 
 library(magrittr) # For the pipe
 source("cv_printing_functions.r")
+source("build_network.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1JwjpZ2qwJoA-nu3QDlOlotss-lGz7yF41DjNJ_yQ4HQ/edit?usp=sharing",  
+  data_location = "https://docs.google.com/spreadsheets/d/1JwjpZ2qwJoA-nu3QDlOlotss-lGz7yF41DjNJ_yQ4HQ/edit?usp=sharing",
   pdf_mode = params$pdf_mode
 )
-
 ```
 
 
 ```{r}
 # When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
-if(params$pdf_mode) {
-    cat("
+if (params$pdf_mode) {
+  cat("
 <style>
 :root{
   --decorator-outer-offset-left: -6.5px;
@@ -48,12 +48,12 @@ Aside
 ```{r}
 # Build interactive network of positions colored by section
 # and connected if they occurred in the same year
-datadrivencv::build_network_logo(CV$entries_data)
+build_network_logo(CV$entries_data)
 ```
 
 
 ```{r}
-if(params$pdf_mode){
+if (params$pdf_mode) {
   cat("View this CV online with links at _berrisch.biz/cv/_")
 } else {
   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/BerriJ/cv/raw/master/berrisch_cv.pdf)")
@@ -67,8 +67,6 @@ Contact {#contact}
 CV %>% print_contact_info()
 ```
 
-
-
 Language Skills {#skills}
 --------------------------------------------------------------------------------
 
@@ -76,18 +74,12 @@ Language Skills {#skills}
 CV %>% print_skill_bars()
 ```
 
-
-
-Disclaimer {#disclaimer}
+Development Tools {#devtools}
 --------------------------------------------------------------------------------
 
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
-
-The source code is available [on github.com/BerriJ/cv](https://github.com/BerriJ/cv).
-
-Last updated on `r Sys.Date()`.
-
-
+```{r}
+CV %>% print_tool_bars()
+```
 
 Main
 ================================================================================
@@ -97,7 +89,7 @@ Jonathan Berrisch {#title}
 
 ```{r}
 # Note the special double pipe so we modify the CV object in place
-CV %<>% print_text_block("intro") 
+CV %<>% print_text_block("intro")
 ```
 
 
@@ -106,7 +98,7 @@ Education {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('education')
+CV %<>% print_section("education")
 ```
 
 
@@ -115,7 +107,7 @@ Research Experience {data-icon=laptop}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('research_positions')
+CV %<>% print_section("research_positions")
 ```
 
 
@@ -123,82 +115,54 @@ CV %<>% print_section('research_positions')
 Industry Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
+```{r}
+CV %<>% print_section("industry_positions")
+```
+
 ::: aside
 ```{r}
-CV %<>% print_text_block('industy_experience_aside')
+CV %<>% print_text_block("industy_experience_aside")
 ```
 :::
 
-```{r}
-CV %<>% print_section('industry_positions')
-```
-
-<!-- These breaks just force a new page so section doesnt get cut off -->
-<br>
-<br>
-<br>
-
-Teaching Experience {data-icon=chalkboard-teacher}
+Publications {data-icon=newspaper}
 --------------------------------------------------------------------------------
 
-::: aside
 ```{r}
-CV %<>% print_text_block('teaching_experience_aside')
-```
-:::
-
-```{r}
-CV %<>% print_section('teaching_positions')
+CV %<>% print_section("publications")
 ```
 
 
-
-Selected Data Science Writing {data-icon=chart-line}
+Conferences and Workshops  {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ::: aside
 ```{r}
-CV %<>% print_text_block('data_science_writing_aside')
+CV %<>% print_text_block("conferences_aside")
 ```
 :::
 
 ```{r}
-CV %<>% print_section('data_science_writings')
+CV %<>% print_section("conferences_workshops")
 ```
-
-
-
-Selected Press (About)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('about_me_press')
-```
-
-
-<br>
-<br>
-
-
-Selected Press (By)  {data-icon=newspaper}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('by_me_press')
-```
-
-
-
-Selected Publications, Posters, and Talks {data-icon=book}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('academic_articles')
-```
-
 
 
 ```{r}
 CV %<>% print_links()
 ```
 
+
+
+
+::: aside
+
+</br>
+</br>
+</br>
+</br>
+</br>
+
+Last updated on `r Sys.Date()`.
+
+Source: [github.com/BerriJ/cv](https://github.com/BerriJ/cv).
+:::
