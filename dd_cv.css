@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap");
 
+* {
+    -webkit-print-color-adjust: exact !important;   /* Chrome, Safari */
+    color-adjust: exact !important;                 /*Firefox*/
+}
+
 /* Main text is monserrat*/
 body {
   font-family: "Montserrat", sans-serif;
@@ -13,7 +18,7 @@ h1,
 h2,
 h3 {
   font-family: "Playfair Display", serif;
-  color: #000;
+  color: rgb(44, 44, 44);
 }
 
 /* When in PDF export mode make sure superscripts are nice and small and italic */
