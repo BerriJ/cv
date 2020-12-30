@@ -146,21 +146,30 @@ CV %<>% print_text_block("conferences_aside")
 CV %<>% print_section("conferences_workshops")
 ```
 
+Voluntary  {data-icon=hands-helping}
+--------------------------------------------------------------------------------
+
+::: aside
+```{r}
+CV %<>% print_text_block("voluntary_aside")
+```
+:::
+
+```{r}
+CV %<>% print_section("voluntary")
+```
+
 
 ```{r}
 CV %<>% print_links()
 ```
 
 
-
-
 ::: aside
 
-</br>
-</br>
-</br>
-</br>
-</br>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 Last updated on `r Sys.Date()`.
 

@@ -13,6 +13,14 @@ rmarkdown::render("cv.rmd",
     output_file = tmp_html_cv_loc
 )
 
+# To install chrome:
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# dpkg -i google-chrome-stable_current_amd64.deb
+
+# To fix dependencies:
+# apt-get update
+# apt-get install -f
+
 # Convert to PDF using Pagedown
 pagedown::chrome_print(
     input = tmp_html_cv_loc,
