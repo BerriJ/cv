@@ -1,0 +1,12 @@
+knitr
+pagedown
+rmarkdown
+googlesheets4
+stringr
+tidyr
+dplyr
+glue
+purrr
+languageserver
+lubridate
+readr
