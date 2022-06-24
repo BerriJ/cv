@@ -1,0 +1,3 @@
+# Docker creates files owned by root. Until I find time to fix that, do:
+sudo chown -R jonathan /home/jonathan/git/cv
+# Before comitting
