@@ -3,13 +3,13 @@
     "dockerFile": "Dockerfile",
     // Arguments to docker run so container can use local x11
     "runArgs": [
-        "--rm",
+        "--rm"
     ],
     // Extensions will get installed automatically
     "extensions": [
         // R
         "ikuyadeu.r",
-        "reditorsupport.r-lsp",
+        "reditorsupport.r-lsp"
     ],
     // Set *default* container specific settings
     // Important for radian and latex
