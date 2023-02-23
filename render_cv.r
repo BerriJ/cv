@@ -1,5 +1,20 @@
 # This script builds both the HTML and PDF versions of your CV
 
+# %% Packages
+install.packages("knitr")
+install.packages("pagedown")
+install.packages("rmarkdown")
+install.packages("googlesheets4")
+install.packages("stringr")
+install.packages("tidyr")
+install.packages("dplyr")
+install.packages("glue")
+install.packages("purrr")
+install.packages("languageserver")
+install.packages("lubridate")
+install.packages("readr")
+# %%
+
 # %% Knit the HTML version
 rmarkdown::render("cv.rmd",
     params = list(pdf_mode = FALSE),
@@ -21,3 +36,4 @@ pagedown::chrome_print(
     extra_args = "--no-sandbox"
 )
 # %%
+
