@@ -5,7 +5,7 @@ install.packages("knitr")
 install.packages("pagedown")
 install.packages("rmarkdown")
 install.packages("googlesheets4")
-install.packages("stringr")
+install.packages("stringr") # Needs icu64
 install.packages("tidyr")
 install.packages("dplyr")
 install.packages("glue")
@@ -22,7 +22,7 @@ rmarkdown::render("cv.rmd",
 )
 
 # Knit the PDF version to temporary html location
-tmp_html_cv_loc <- fs::file_temp(ext = ".html")
+tmp_html_cv_loc <- "tmp/cv.html" # fs::file_temp(ext = ".html")
 rmarkdown::render("cv.rmd",
     params = list(pdf_mode = TRUE),
     output_file = tmp_html_cv_loc
@@ -36,4 +36,3 @@ pagedown::chrome_print(
     extra_args = "--no-sandbox"
 )
 # %%
-
