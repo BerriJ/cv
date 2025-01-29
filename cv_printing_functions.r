@@ -39,14 +39,14 @@ create_CV_object <- function(data_location,
     read_gsheet <- function(sheet_id) {
       googlesheets4::read_sheet(data_location, sheet = sheet_id, skip = 1, col_types = "c")
     }
-    cv$entries_data <- read_gsheet(sheet_id = "entries")
+    cv$entries_data <- read_gsheet(sheet_id = "entries_short")
     cv$skills <- read_gsheet(sheet_id = "language_skills")
     cv$tools <- read_gsheet(sheet_id = "dev_tools")
     cv$text_blocks <- read_gsheet(sheet_id = "text_blocks")
     cv$contact_info <- read_gsheet(sheet_id = "contact_info")
   } else {
     # Want to go old-school with csvs?
-    cv$entries_data <- readr::read_csv(paste0(data_location, "entries.csv"), skip = 1)
+    cv$entries_data <- readr::read_csv(paste0(data_location, "entries_short.csv"), skip = 1)
     cv$skills <- readr::read_csv(paste0(data_location, "language_skills.csv"), skip = 1)
     cv$tools <- readr::read_csv(paste0(data_location, "dev_tools.csv"), skip = 1)
     cv$text_blocks <- readr::read_csv(paste0(data_location, "text_blocks.csv"), skip = 1)
@@ -121,9 +121,10 @@ sanitize_links <- function(cv, text) {
       )
 
       # Replace the link destination and remove square brackets for title
-      text <- text %>%
-        stringr::str_replace_all(stringr::fixed(link_superscript_mappings)) %>%
-        stringr::str_replace_all("\\[(.+?)\\]", "\\1")
+      # Reaktivate this if you want to have links replaced with superscripts also look at cv.rmd 'print_links'
+      # text <- text %>%
+      #   stringr::str_replace_all(stringr::fixed(link_superscript_mappings)) %>%
+      #   stringr::str_replace_all("\\[(.+?)\\]", "\\1")
     }
   }
 

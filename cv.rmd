@@ -132,6 +132,7 @@ Publications {data-icon=newspaper}
 CV %<>% print_section("publications")
 ```
 
+\newpage
 
 Conferences and Workshops  {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
@@ -159,15 +160,26 @@ CV %<>% print_text_block("voluntary_aside")
 CV %<>% print_section("voluntary")
 ```
 
+Interests  {data-icon=cookie-bite}
+--------------------------------------------------------------------------------
+
+::: aside
+```{r}
+CV %<>% print_text_block("interests_aside")
+```
+:::
 
 ```{r}
-CV %<>% print_links()
+CV %<>% print_section("interests")
 ```
 
+```{r}
+# CV %<>% print_links()
+```
 
 ::: aside
 
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br />
 
 Last updated on `r Sys.Date()`.
 
