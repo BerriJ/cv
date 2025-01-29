@@ -101,9 +101,15 @@ Education {data-icon=graduation-cap data-concise=true}
 CV %<>% print_section("education")
 ```
 
+Software Projects {data-icon=laptop data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section("software")
+```
 
 
-Research Experience {data-icon=laptop}
+Research Experience {data-icon=flask-vial}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -115,15 +121,16 @@ CV %<>% print_section("research_positions")
 Industry Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
-```{r}
-CV %<>% print_section("industry_positions")
-```
-
 ::: aside
 ```{r}
 CV %<>% print_text_block("industy_experience_aside")
 ```
 :::
+
+```{r}
+CV %<>% print_section("industry_positions")
+```
+
 
 Publications {data-icon=newspaper}
 --------------------------------------------------------------------------------
@@ -132,9 +139,7 @@ Publications {data-icon=newspaper}
 CV %<>% print_section("publications")
 ```
 
-\newpage
-
-Conferences and Workshops  {data-icon=chalkboard-teacher}
+Conferences and Workshops  {data-icon=chalkboard-teacher, data-concise=true}
 --------------------------------------------------------------------------------
 
 ::: aside

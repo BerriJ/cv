@@ -69,6 +69,11 @@ create_CV_object <- function(data_location,
       lubridate::dmy()
   }
 
+  cv$entries_data <- cv$entries_data |>
+    dplyr::filter(
+      in_resume == "TRUE"
+    )
+
   # Clean up entries dataframe to format we need it for printing
   cv$entries_data %<>%
     tidyr::unite(
