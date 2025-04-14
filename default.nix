@@ -17,6 +17,7 @@ pkgs.mkShell rec {
 
     # Project specific
     chromium
+    pandoc
     rPackages.tidyverse
     rPackages.rmarkdown
     rPackages.knitr
